@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8tFMkYKz-D90649YHeru2Jdzw5IftoI9m9QQ6PmNVDQ&s" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="landingStyle.css">
+    <link rel="stylesheet" href="mainPageStyle.css">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="main-heading">
+                <img src="images/squarespace-logo-png-transparent-removebg-preview.png" alt="">
+                <p class="expenseP">Expense tracker</p>
+            </div>
+            <div class="menu">
+                <p class="menu-p">menu</p>
+                <span class="menu-span">+</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="landing-page">
+                <div class="left-side">
+                    <div class="left-side-firstDiv">
+                        <span id="s1">Financial</span>
+                        <span id="s2">Control</span>
+                    </div>
+                    <div class="left-side-secondDiv">
+                        <span id="s3">in</span>
+                        <span id="s4">simple</span>
+                        <span id="s5">steps</span>
+                    </div>
+                    <div class="landing-button-div">
+                        <button type="button" class="landing-button"><span>Get Started</span><span>↗</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-page">
+        <div class="header2">
+            <div class="main-heading2">
+                <img src="images/squarespace-logo-png-transparent-removebg-preview.png" alt="">
+                <p class="expenseP2">Expense tracker</p>
+            </div>
+            <div class="menu2">
+                <p class="menu-p2">menu</p>
+                <span class="menu-span2">+</span>
+            </div>
+        </div>
+        <div class="mainPage">
+            <div class="first-section">
+                <div class="total-balance">
+                    <p>Total Balance</p>
+                    <p class="main-balance">₹ 0</p>
+                </div>
+                <div class="inc-exp">
+                    <div class="income">
+                        <div>
+                            <img src="images/arrow down.png" alt="">
+                            <p>Income</p>
+                        </div>
+                        <p id="incomeP2">₹ 0</p>
+                    </div>
+                    <div class="expense">
+                        <div>
+                            <img src="images/arrow up.png" alt="">
+                            <p>Expense</p>
+                        </div>
+                        <p id="expenseP2">₹ 0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="second-section">
+                <div class="transaction-history">
+                    <p>Transactions History</p>
+                </div>
+            </div>
+            <div class="third-section">
+                <form action="#" id="form" onsubmit="return addTransaction()">
+                    <label for="typeInput" id="typeLabel">Type</label>
+                    <select id="typeInput" class="padding">
+                        <option value="select" selected disabled hidden>Select Type</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                    <p class="error" id="typeError">Select A Type To Proceed</p>
+
+                    <label for="categoryInput" id="categoryLabel">Category</label>
+                    <select id="categoryInput" class="padding">
+                        <option value="select" selected disabled hidden>Select Category</option>
+                    </select>
+                    <p class="error" id="categoryError">Select A Category To Proceed</p>
+
+                    <label for="dateInput" id="dateLabel">Date</label>
+                    <input type="date" id="dateInput" class="padding" placeholder="dd-mm-yyyy">
+                    <p class="error" id="dateError">Select A Date To Proceed</p>
+
+                    <label for="amountInput" id="amountLabel">Amount</label>
+                    <input type="number" id="amountInput" class="padding" placeholder="Enter amount of transaction">
+                    <p class="error" id="amountError">Enter Amount To Proceed</p>
+                    
+                    <input type="submit" class="addBtn" onclick="checkTypeInput();checkCategoryInput();checkDateInput();checkAmountInput();addTransaction();ifSecondSectionEmpty()">
+                </form>
+            </div>
+        </div>
+    </div> 
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="gsap-script.js"></script>
+</body>
+</html>
